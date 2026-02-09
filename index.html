@@ -15,99 +15,56 @@
         }
 
         body {
-            margin: 0;
-            padding: 40px 20px;
+            margin: 0; padding: 0;
             font-family: 'Inter', sans-serif;
             background-color: var(--bg-blue);
             color: var(--white);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 100vh;
             text-align: center;
+            display: flex; justify-content: center; align-items: center;
+            min-height: 100vh;
         }
 
-        .container { max-width: 600px; width: 100%; }
+        .container { max-width: 600px; width: 90%; padding: 40px 0; }
 
         .logo {
-            width: 180px;
-            height: 180px;
-            margin: 0 auto 20px;
+            width: 180px; height: 180px; margin: 0 auto 20px;
             background: url('Chicken Studios.png') no-repeat center;
             background-size: contain;
         }
 
-        h1 {
-            font-family: 'Bungee', cursive;
-            font-size: 3rem;
-            text-shadow: 4px 4px 0px var(--black);
-            margin: 10px 0;
-        }
-
-        .tagline {
-            font-size: 1.2rem;
-            font-weight: 700;
+        h1 { font-family: 'Bungee', cursive; font-size: 3rem; text-shadow: 4px 4px 0px var(--black); margin: 10px 0; }
+        
+        .status-card {
             background: rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            padding: 10px 20px;
-            border-radius: 50px;
-            margin-bottom: 30px;
+            padding: 25px; border-radius: 20px; margin-bottom: 30px;
+            border: 2px solid rgba(255, 255, 255, 0.1);
         }
 
-        /* Progress Bar */
-        .progress-container {
-            background: rgba(0, 0, 0, 0.3);
-            border-radius: 20px;
-            padding: 15px;
-            margin-bottom: 30px;
+        .live-badge {
+            background: #00FF00; color: black; padding: 5px 15px;
+            border-radius: 50px; font-weight: 900; font-size: 0.8rem;
+            display: inline-block; margin-bottom: 10px;
         }
 
-        .progress-label { font-family: 'Bungee', cursive; font-size: 0.9rem; margin-bottom: 10px; display: block; }
-
-        .progress-bar { background: var(--white); height: 20px; border-radius: 10px; overflow: hidden; }
-
-        .progress-fill { background: var(--accent-yellow); height: 100%; width: 99.9%; transition: 0.5s; }
-
-        /* Team Section */
-        .team-section {
-            background: rgba(255, 255, 255, 0.15);
-            padding: 25px;
-            border-radius: 20px;
-            margin-bottom: 30px;
-        }
-
+        .team-section { background: rgba(255, 255, 255, 0.15); padding: 25px; border-radius: 20px; margin-bottom: 30px; }
         .team-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
+        .member { background: var(--white); color: var(--black); padding: 15px; border-radius: 12px; box-shadow: 4px 4px 0px rgba(0,0,0,0.1); }
 
-        .member {
-            background: var(--white);
-            color: var(--black);
-            padding: 15px;
-            border-radius: 12px;
-            box-shadow: 4px 4px 0px rgba(0,0,0,0.1);
-        }
-
-        /* Buttons */
         .btn-group { display: flex; gap: 15px; justify-content: center; flex-wrap: wrap; }
-
         .btn {
-            text-decoration: none;
-            color: var(--black);
-            background: var(--white);
-            padding: 15px 25px;
-            border-radius: 12px;
-            font-weight: 900;
-            text-transform: uppercase;
-            transition: transform 0.2s;
-            box-shadow: 0px 4px 0px #ccc;
+            text-decoration: none; color: var(--black); background: var(--white);
+            padding: 15px 25px; border-radius: 12px; font-weight: 900;
+            text-transform: uppercase; transition: 0.2s; box-shadow: 0px 4px 0px #ccc;
+            cursor: pointer; border: none; font-family: 'Inter';
         }
-
-        .btn:hover { transform: translateY(-3px); }
-
-        .btn-discord {
-            background: var(--discord-blurple);
-            color: var(--white);
-            box-shadow: 0px 4px 0px #3e48ae;
-        }
+        .btn:hover { transform: translateY(-3px); box-shadow: 0px 6px 0px #ccc; }
+        .btn:active { transform: translateY(0px); box-shadow: 0px 2px 0px #ccc; }
+        
+        .btn-play { background: var(--accent-yellow); box-shadow: 0px 4px 0px #b89b00; }
+        .btn-play:hover { box-shadow: 0px 6px 0px #b89b00; }
+        
+        .btn-discord { background: var(--discord-blurple); color: var(--white); box-shadow: 0px 4px 0px #3e48ae; }
+        .btn-discord:hover { box-shadow: 0px 6px 0px #3e48ae; }
     </style>
 </head>
 <body>
@@ -115,34 +72,37 @@
     <div class="container">
         <div class="logo"></div>
         <h1>Chicken Studios</h1>
-        <span class="tagline">Something big is hatching...</span>
-
-        <div class="progress-container">
-            <span class="progress-label">Project: "Chicken Studios Hub" — 99.9% Done</span>
-            <div class="progress-bar"><div class="progress-fill"></div></div>
+        
+        <div class="status-card">
+            <div class="live-badge">GAME LIVE</div>
+            <h2 style="font-family: 'Bungee'; margin: 5px 0;">Chicken Studios Hub</h2>
+            <p>Our official hub is now live on Roblox! Come hang out.</p>
+            <a href="https://www.roblox.com/games/116547065695086/Chicken-Studios-Hub" target="_blank" class="btn btn-play">PLAY ON ROBLOX</a>
         </div>
 
         <div class="team-section">
             <h2 style="font-family: 'Bungee'; margin-top: 0;">The Flock</h2>
             <div class="team-grid">
                 <div class="member">
-                    <div style="font-size: 2rem;">🐔</div>
-                    <h3 style="margin: 5px 0;">Chicken Guy</h3>
-                    <p style="margin: 0; font-size: 0.8rem; font-weight: bold; color: #555;">Founder</p>
+                    <h3 style="margin:0;">Founder</h3>
+                    <p style="margin:0; font-size: 0.8rem; color: #555;">Chicken Guy</p>
                 </div>
                 <div class="member">
-                    <div style="font-size: 2rem;">🛠️</div>
-                    <h3 style="margin: 5px 0;">[None]</h3>
-                    <p style="margin: 0; font-size: 0.8rem; font-weight: bold; color: #555;">Builder</p>
+                    <h3 style="margin:0;">Builder</h3>
+                    <p style="margin:0; font-size: 0.8rem; color: #555;">[Position Open]</p>
                 </div>
             </div>
         </div>
-        
+
         <div class="btn-group">
-            <a href="#" class="btn">Roblox Group</a>
-            <a href="https://discord.com/invite/KZMpRrjyA2" class="btn btn-discord">Join Discord</a>
+            <a href="#none-yet" target="_blank" class="btn">Group</a>
+            <a href="https://discord.com/invite/KZMpRrjyA2" target="_blank" class="btn btn-discord">Discord</a>
         </div>
     </div>
 
+    <script>
+        // Simple click effect for console logging (Optional)
+        console.log("Chicken Studios Website Loaded!");
+    </script>
 </body>
 </html>
